@@ -6,11 +6,11 @@ import { Filter, Star, ShoppingCart, Heart, Check, ChevronRight, LayoutGrid, Lis
 
 const ALL_BIKES = [
   { id: 1, name: "Neon Strider X1", price: 1299, rating: 4.8, reviews: 124, stock: true, img: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=500" },
-  { id: 2, name: "Cyber Cruiser", price: 2499, rating: 5.0, reviews: 89, stock: true, img: "https://images.unsplash.com/photo-1617625802912-cde586faf331?w=500" },
-  { id: 3, name: "Toxic Trail", price: 3100, rating: 4.9, reviews: 56, stock: false, img: "https://images.unsplash.com/photo-1623079400394-184985e35d2f?w=500" },
-  { id: 4, name: "Stealth Bomber", price: 4500, rating: 4.7, reviews: 210, stock: true, img: "https://images.unsplash.com/photo-1511994298220-4127096033be?w=500" },
-  { id: 5, name: "Volt City Z", price: 1850, rating: 4.5, reviews: 45, stock: true, img: "https://images.unsplash.com/photo-1559348349-86f163cc8cce?w=500" },
-  { id: 6, name: "Plasma Trek", price: 2899, rating: 4.8, reviews: 112, stock: true, img: "https://images.unsplash.com/photo-1534149679313-2d21cc41031d?w=500" },
+  { id: 2, name: "Cyber Cruiser", price: 2499, rating: 5.0, reviews: 89, stock: true, img: "https://images.unsplash.com/photo-1753092604434-8c0e6c3b50f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGUlMjBiaWtlc3xlbnwwfHwwfHx8MA%3D%3D" },
+  { id: 3, name: "Toxic Trail", price: 3100, rating: 4.9, reviews: 56, stock: false, img: "https://images.unsplash.com/photo-1619635161516-d724481fc355?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGUlMjBiaWtlc3xlbnwwfHwwfHx8MA%3D%3D" },
+  { id: 4, name: "Stealth Bomber", price: 4500, rating: 4.7, reviews: 210, stock: true, img: "https://images.unsplash.com/photo-1582743514780-b381c39ada9f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGUlMjBiaWtlc3xlbnwwfHwwfHx8MA%3D%3D" },
+  { id: 5, name: "Volt City Z", price: 1850, rating: 4.5, reviews: 45, stock: true, img: "https://images.unsplash.com/photo-1635324288506-d2c2294c105d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZSUyMGJpa2VzfGVufDB8fDB8fHww" },
+  { id: 6, name: "Plasma Trek", price: 2899, rating: 4.8, reviews: 112, stock: true, img: "https://images.unsplash.com/photo-1668753543330-78b7685f7c4c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
 ];
 
 export default function Catalogue() {

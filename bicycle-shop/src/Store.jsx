@@ -23,7 +23,7 @@ export const translations = {
       help: { contact: "Contact Us", ship: "Shipping Policy", returns: "Returns", faq: "FAQ" },
       sub_text: "Get 10% off your first order.",
       sub_btn: "Subscribe",
-      copyright: "© 2025 E-BIKEX Inc. All rights reserved."
+      copyright: "© 2025 Apex Returns. All rights reserved."
     },
     home: {
       heroTitle: "The Future of Cycling",
@@ -111,7 +111,7 @@ export const translations = {
       help: { contact: "Contact", ship: "Verzendbeleid", returns: "Retourneren", faq: "FAQ" },
       sub_text: "Krijg 10% korting op je eerste bestelling.",
       sub_btn: "Abonneren",
-      copyright: "© 2025 E-BIKEX Inc. Alle rechten voorbehouden."
+      copyright: "© 2025 Apex Returns. Alle rechten voorbehouden."
     },
     home: {
       heroTitle: "De Toekomst van Fietsen",
