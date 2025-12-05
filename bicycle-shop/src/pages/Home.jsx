@@ -37,11 +37,15 @@ export default function Home() {
           <div className="absolute top-[20%] left-[50%] -translate-x-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px]" />
         </div>
 
-        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-accent font-mono tracking-[0.5em] text-xs md:text-sm mb-6 uppercase">
+        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-accent font-bold tracking-[0.5em] text-xs md:text-sm mb-6 uppercase">
           {t.home.est}
         </motion.span>
 
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-6xl md:text-9xl font-black mb-8 uppercase italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-700 leading-[0.9]">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          className="text-6xl md:text-9xl font-black mb-8 uppercase italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[var(--grad-start)] to-[var(--grad-end)] leading-[0.9]"
+        >
           {t.home.heroTitle}
         </motion.h1>
 
@@ -90,7 +94,7 @@ export default function Home() {
               <img src={cat.img} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition" />
               <div className="absolute bottom-6 left-6">
-                <h3 className="text-2xl font-bold italic uppercase">{t.catalogue.filters.cats[i] || "Model X"}</h3>
+                <h3 className="text-2xl font-bold italic uppercase text-always-white">{t.catalogue.filters.cats[i] || "Model X"}</h3>
               </div>
             </div>
           ))}
@@ -115,13 +119,13 @@ export default function Home() {
 
           {/* Content */}
           <div className="relative z-10 p-12 md:p-24 text-center">
-            <h2 className="text-4xl md:text-6xl font-black italic uppercase mb-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            <h2 className="text-4xl md:text-6xl font-black italic uppercase mb-6 text-always-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               {t.home.sections.flash}
             </h2>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto font-medium drop-shadow-md">
               {t.home.sections.flash_sub}
             </p>
-            <button className="bg-white text-bgPrimary font-black py-4 px-12 rounded-full hover:bg-accent hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_var(--accent)]">
+            <button className="bg-white text-black font-black py-4 px-12 rounded-full hover:bg-accent hover:text-bgPrimary hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_var(--accent)]">
               {t.home.sections.flash_btn}
             </button>
           </div>
@@ -207,7 +211,7 @@ export default function Home() {
               </div>
               <p className="text-lg text-gray-300 italic mb-6">"{testi.text}"</p>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-gray-700 text-always-white flex items-center justify-center font-bold text-sm">
                   {testi.name.charAt(0)}
                 </div>
                 <span className="font-bold text-sm tracking-wide uppercase">{testi.name}</span>

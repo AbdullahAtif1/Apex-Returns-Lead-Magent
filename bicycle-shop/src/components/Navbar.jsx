@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useStore } from '../Store';
-import { Globe, Palette, Zap } from 'lucide-react';
+import { Globe, Palette, Zap, Sun, Moon } from 'lucide-react';
 
 export default function Navbar() {
-  const { t, toggleLang, cycleTheme, lang } = useStore();
+  const { t, toggleLang, cycleTheme, toggleMode, mode } = useStore();
 
   return (
     <nav className="fixed top-0 w-full z-50 p-4">
@@ -32,6 +32,9 @@ export default function Navbar() {
         <div className="flex gap-4 shrink-0">
           <button onClick={toggleLang} className="text-white flex items-center gap-2 border border-accent/50 px-3 py-1 rounded hover:bg-accent/10 transition text-sm uppercase">
             <Globe size={16} /> {t.nav.btn_lang}
+          </button>
+          <button onClick={toggleMode} className="text-white flex items-center gap-2 border border-accent/50 px-3 py-1 rounded hover:bg-accent/10 transition text-sm uppercase">
+            {mode === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <button onClick={cycleTheme} className="flex items-center gap-2 bg-accent text-bgPrimary px-3 py-1 rounded font-bold hover:brightness-110 transition shadow-[0_0_10px_var(--accent)]">
             <Palette size={16} /> 

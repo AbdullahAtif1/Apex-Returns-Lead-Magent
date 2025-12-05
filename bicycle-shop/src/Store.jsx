@@ -188,6 +188,7 @@ export const translations = {
 export const StoreProvider = ({ children }) => {
   const [lang, setLang] = useState('nl');
   const [theme, setTheme] = useState('voltaic');
+  const [mode, setMode] = useState('light');
 
   const toggleLang = () => setLang(l => l === 'nl' ? 'en' : 'nl');
   const cycleTheme = () => {
@@ -195,13 +196,17 @@ export const StoreProvider = ({ children }) => {
     const nextIndex = (themes.indexOf(theme) + 1) % themes.length;
     setTheme(themes[nextIndex]);
   };
+  const toggleMode = () => {
+    setMode(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
-  }, [theme]);
+    // This creates data-theme="voltaic-dark" or "voltaic-light"
+    document.body.setAttribute('data-theme', `${theme}-${mode}`);
+  }, [theme, mode]);
 
-  return (
-    <StoreContext.Provider value={{ lang, toggleLang, theme, cycleTheme, t: translations[lang] }}>
+return (
+    <StoreContext.Provider value={{ lang, toggleLang, theme, cycleTheme, mode, toggleMode, t: translations[lang] }}>
       {children}
     </StoreContext.Provider>
   );

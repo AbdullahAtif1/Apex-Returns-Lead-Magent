@@ -2,40 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* THEME 1: VOLTAIC (Electric Blue & Yellow) */
-:root {
+/* =========================================
+  THEME DEFINITIONS
+   ========================================= */
+
+/* --- VOLTAIC (Electric Blue) --- */
+[data-theme='voltaic-dark'] {
   --bg-primary: #0a0a0a;
   --bg-secondary: #171717;
-  --accent: #00f3ff; /* Electric Blue */
+  --accent: #00f3ff;
   --accent-glow: #00f3ff80; 
   --text-main: #ffffff;
+  --text-muted: #9ca3af;
+}
+[data-theme='voltaic-light'] {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --accent: #00bcd4; /* Slightly darker teal for visibility on white */
+  --accent-glow: #00bcd440; 
+  --text-main: #111827;
+  --text-muted: #4b5563;
 }
 
-/* THEME 2: CYBER (Pink & Purple) */
-[data-theme='cyber'] {
+/* --- CYBER (Pink/Purple) --- */
+[data-theme='cyber-dark'] {
   --bg-primary: #0f0518;
   --bg-secondary: #1a0b2e;
-  --accent: #ff00ff; /* Neon Pink */
+  --accent: #ff00ff; 
   --accent-glow: #ff00ff80;
   --text-main: #f0e6ff;
+  --text-muted: #a78bfa;
+}
+[data-theme='cyber-light'] {
+  --bg-primary: #fff0f5;
+  --bg-secondary: #ffffff;
+  --accent: #d500d5; /* Darker pink */
+  --accent-glow: #d500d540;
+  --text-main: #2e1065;
+  --text-muted: #6b21a8;
 }
 
-/* THEME 3: TOXIC (Neon Green & Black) */
-[data-theme='toxic'] {
+/* --- TOXIC (Neon Green) --- */
+[data-theme='toxic-dark'] {
   --bg-primary: #000000;
   --bg-secondary: #0c140c;
-  --accent: #39ff14; /* Neon Green */
+  --accent: #39ff14; 
   --accent-glow: #39ff1480;
   --text-main: #e0ffe0;
+  --text-muted: #4ade80;
+}
+[data-theme='toxic-light'] {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #ffffff;
+  --accent: #00c200; /* Darker Green */
+  --accent-glow: #00c20040;
+  --text-main: #052e16;
+  --text-muted: #166534;
 }
 
+/* Base Styles */
 body {
   background-color: var(--bg-primary);
   color: var(--text-main);
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom Scrollbar for that futuristic feel */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -45,4 +77,58 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--accent); 
   border-radius: 4px;
+}
+
+/* =========================================
+  SHARED GRADIENT VARIABLES
+   ========================================= */
+
+/* Dark Mode Gradient: White (Top) -> Dark Gray (Bottom) */
+[data-theme$='-dark'] {
+  --grad-start: #ffffff;
+  --grad-end: #374151; /* gray-700 */
+}
+
+/* Light Mode Gradient: Dark Black (Top) -> Light Gray (Bottom) */
+[data-theme$='-light'] {
+  --grad-start: #111827; /* gray-900 */
+  --grad-end: #9ca3af;   /* gray-400 */
+}
+
+/* =========================================
+  LIGHT MODE COMPATIBILITY LAYER 
+   ========================================= */
+/* Since existing pages use hardcoded 'text-white' and 'text-gray-400',
+  we override them when the theme ends in '-light'.
+*/
+
+[data-theme$='-light'] .text-white {
+  color: var(--text-main) !important;
+}
+
+[data-theme$='-light'] .text-gray-400,
+[data-theme$='-light'] .text-gray-300, 
+[data-theme$='-light'] .text-gray-500 {
+  color: var(--text-muted) !important;
+}
+
+/* Invert icons that are white in dark mode */
+[data-theme$='-light'] .text-white svg {
+    stroke: var(--text-main);
+}
+
+/* Adjust borders for light mode visibility */
+[data-theme$='-light'] .border-white\/5,
+[data-theme$='-light'] .border-white\/10,
+[data-theme$='-light'] .border-white\/20 {
+    border-color: rgba(0,0,0,0.1) !important;
+}
+
+/* Ensure Navbar text is readable in light mode */
+[data-theme$='-light'] nav .text-white {
+    color: var(--text-main) !important;
+}
+
+.text-always-white {
+  color: #ffffff !important;
 }

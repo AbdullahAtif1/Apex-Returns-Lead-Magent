@@ -42,7 +42,7 @@ export default function Catalogue() {
             </h3>
             <div className="space-y-3 text-sm text-gray-400">
               {t.catalogue.filters.cats.map((cat) => (
-                <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-white transition group">
+                <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-accent transition group">
                   <div className="w-4 h-4 border border-gray-600 rounded flex items-center justify-center group-hover:border-accent">
                     <div className="w-2 h-2 bg-accent rounded-sm opacity-0 group-hover:opacity-100 transition" />
                   </div>
@@ -87,7 +87,7 @@ export default function Catalogue() {
             {ALL_BIKES.map((bike, i) => (
               <motion.div key={bike.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className={`bg-bgSecondary/40 border border-white/5 rounded-3xl overflow-hidden group hover:border-accent/50 transition-all duration-300 flex ${viewMode === 'list' ? 'flex-row' : 'flex-col'}`}>
                 <div className={`relative overflow-hidden ${viewMode === 'list' ? 'w-1/3' : 'h-64 w-full'}`}>
-                  {!bike.stock && <div className="absolute inset-0 bg-black/70 z-10 flex items-center justify-center font-bold text-white uppercase tracking-widest backdrop-blur-sm">{t.catalogue.ui.out}</div>}
+                  {!bike.stock && <div className="absolute inset-0 bg-black/70 z-10 flex items-center justify-center font-bold text-always-white uppercase tracking-widest backdrop-blur-sm">{t.catalogue.ui.out}</div>}
                   {bike.stock && <div className="absolute top-4 right-4 z-10"><button className="bg-bgPrimary/80 p-2 rounded-full text-gray-400 hover:text-red-500 hover:bg-white transition backdrop-blur-md"><Heart size={18} /></button></div>}
                   <img src={bike.img} className={`w-full h-full object-cover transition-transform duration-700 ${bike.stock ? 'group-hover:scale-110' : 'grayscale'}`} />
                 </div>
