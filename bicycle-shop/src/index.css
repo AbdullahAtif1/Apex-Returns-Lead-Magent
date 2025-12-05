@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* THEME 1: VOLTAIC (Electric Blue & Yellow) */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #171717;
+  --accent: #00f3ff; /* Electric Blue */
+  --accent-glow: #00f3ff80; 
+  --text-main: #ffffff;
+}
+
+/* THEME 2: CYBER (Pink & Purple) */
+[data-theme='cyber'] {
+  --bg-primary: #0f0518;
+  --bg-secondary: #1a0b2e;
+  --accent: #ff00ff; /* Neon Pink */
+  --accent-glow: #ff00ff80;
+  --text-main: #f0e6ff;
+}
+
+/* THEME 3: TOXIC (Neon Green & Black) */
+[data-theme='toxic'] {
+  --bg-primary: #000000;
+  --bg-secondary: #0c140c;
+  --accent: #39ff14; /* Neon Green */
+  --accent-glow: #39ff1480;
+  --text-main: #e0ffe0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Custom Scrollbar for that futuristic feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent); 
+  border-radius: 4px;
+}
