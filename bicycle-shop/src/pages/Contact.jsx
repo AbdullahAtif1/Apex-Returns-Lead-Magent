@@ -42,10 +42,10 @@ export default function Contact() {
           <h3 className="text-2xl font-bold text-white mb-6 uppercase">{t.contact.form.title}</h3>
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div><label className="block text-xs font-bold text-accent mb-2 uppercase tracking-wide">{t.contact.form.name}</label><input type="text" className="w-full bg-bgPrimary/50 border border-white/10 rounded-xl p-4 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-white" /></div>
-              <div><label className="block text-xs font-bold text-accent mb-2 uppercase tracking-wide">{t.contact.form.phone}</label><input type="tel" className="w-full bg-bgPrimary/50 border border-white/10 rounded-xl p-4 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-white" /></div>
+              <div><label className="block text-xs font-bold text-accent mb-2 uppercase tracking-wide">{t.contact.form.name}</label><input type="text" className="w-full bg-bgPrimary/50 border border-white/10 rounded-xl p-4 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-black" /></div>
+              <div><label className="block text-xs font-bold text-accent mb-2 uppercase tracking-wide">{t.contact.form.phone}</label><input type="tel" className="w-full bg-bgPrimary/50 border border-white/10 rounded-xl p-4 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-black" /></div>
             </div>
-            <div><label className="block text-xs font-bold text-accent mb-2 uppercase tracking-wide">{t.contact.form.msg}</label><textarea rows="4" className="w-full bg-bgPrimary/50 border border-white/10 rounded-xl p-4 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-white"></textarea></div>
+            <div><label className="block text-xs font-bold text-accent mb-2 uppercase tracking-wide">{t.contact.form.msg}</label><textarea rows="4" className="w-full bg-bgPrimary/50 border border-white/10 rounded-xl p-4 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-black"></textarea></div>
             <button className="w-full bg-accent text-bgPrimary font-black text-lg py-4 rounded-xl hover:brightness-110 transition shadow-[0_0_20px_var(--accent-glow)] flex items-center justify-center gap-2 uppercase tracking-widest"><Send size={20} /> {t.contact.form.btn}</button>
           </form>
         </motion.div>
