@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <StoreProvider>
-      <BrowserRouter basename="/Apex-Returns-Lead-Magent">
+      <BrowserRouter>
         <div className="flex flex-col min-h-screen">
           <Navbar />
           
